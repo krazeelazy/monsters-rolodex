@@ -26,8 +26,16 @@ class App extends Component {
     //     this.setState({ searchField: e.target.value})
     // }
     
-    handleChange = (e) => {
-        this.setState({ searchField: e.target.value})
+    // // after lesson 49
+    // handleChange = (e) => {
+    //     this.setState({ searchField: e.target.value})
+    // }
+
+    onSearchChange = (event) => {
+        this.setState({ 
+            searchField: event.target.value, 
+            title: event.target.value 
+        });
     }
 
     render() {
@@ -107,12 +115,22 @@ class App extends Component {
             //     <CardList monsters={filteredMonsters} />
             // </div>
 
+            // // after lesson 49
+            // <div className='App'>
+            //     <h1> Monster's Rolodex </h1>
+            //     <SearchBox
+            //         placeholder='search monster'
+            //         handleChange={this.handleChange}
+            //     />
+            //     <CardList monsters={filteredMonsters} />
+            // </div>
+
 
             <div className='App'>
-            <h1> Monster's Rolodex </h1>
+                <h1> Monster's Rolodex </h1>
                 <SearchBox
                     placeholder='search monster'
-                    handleChange={this.handleChange}
+                    handleChange={this.onSearchChange}
                 />
                 <CardList monsters={filteredMonsters} />
             </div>
